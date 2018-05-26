@@ -1,0 +1,32 @@
+{
+  "name": "mock-server",
+  "version": "0.1",
+  "description": "Build and Serve Test Data",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
+    "build": "babel sandbox -s -D -d target --presets env",
+    "start": "node target"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "compression": "^1.5.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "lodash-es": "^4.17.10",
+    "morgan": "^1.8.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "eslint": "^3.19.0",
+    "faker": "^4.1.0",
+    "nodemon": "^1.9.2"
+  }
+}
