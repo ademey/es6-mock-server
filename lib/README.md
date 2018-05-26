@@ -1,8 +1,3 @@
-# HTML-FW-MOCK-SERVER Data Creation Library
-
-This folder contains a series of functions and utilities to create random, structured data.
-These functions mostly fall in to 2 categories: "Providers" and "Repeaters".
-
 ## Providers
 
 A provider is a function that returns data. They are the building blocks of random data creation.

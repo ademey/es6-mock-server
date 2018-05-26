@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
     "build": "babel sandbox -s -D -d target --presets env",
-    "start": "node target"
+    "start": "node target",
+    "prettier": "prettier --write --single-quote --print-width 100 \"{lib, src, sandbox}/**/*.js\""
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -25,8 +26,13 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.4.0",
-    "eslint": "^3.19.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "faker": "^4.1.0",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "prettier": "1.12.1"
   }
 }

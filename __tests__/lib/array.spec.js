@@ -4,8 +4,6 @@ describe('getRandom', () => {
   const list = ['a', 'b', 'c', 'd'];
   it('picks one', () => {
     const pick = getRandom(list);
-    expect(
-      list.indexOf(pick)
-    ).toBeGreaterThan(-1);
+    expect(list.indexOf(pick)).toBeGreaterThan(-1);
   });
 });

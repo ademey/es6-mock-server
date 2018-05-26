@@ -27,4 +27,3 @@ describe('nonsense', () => {
     expect(str.length).toBe(5);
   });
 });
-
