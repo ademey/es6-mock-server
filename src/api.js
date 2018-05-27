@@ -14,7 +14,7 @@ import { version } from '../package.json';
  *
  * app.use('/', demoApi);
  */
-const api = (routes) => {
+const api = routes => {
   const router = Router();
 
   const routeKeys = Object.keys(routes);
