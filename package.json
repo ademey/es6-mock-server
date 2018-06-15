@@ -1,6 +1,6 @@
 {
   "name": "mock-server",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Build and Serve Test Data",
   "main": "target/index.js",
   "scripts": {
