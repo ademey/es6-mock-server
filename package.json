@@ -1,5 +1,5 @@
 {
-  "name": "express-mock-server",
+  "name": "es6-mock-server",
   "version": "0.1.1",
   "description": "Build and Serve Test Data",
   "main": "target/index.js",
