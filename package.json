@@ -1,13 +1,14 @@
 {
-  "name": "mock-server",
+  "name": "express-mock-server",
   "version": "0.1",
   "description": "Build and Serve Test Data",
   "main": "target/index.js",
   "scripts": {
-    "watch": "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
+    "watch":
+      "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
     "build": "babel src -s -D -d target --presets env",
     "start": "node target",
-    "prettier": "prettier --write --single-quote --print-width 100 \"{lib, src, sandbox}/**/*.js\""
+    "prettier": "prettier --write \"{lib, src, sandbox, scripts, bin}/**/*.js\""
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
@@ -21,6 +22,7 @@
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
     "cors": "^2.7.1",
+    "cross-spawn": "^6.0.5",
     "express": "^4.13.3",
     "lodash-es": "^4.17.10",
     "morgan": "^1.8.0",
