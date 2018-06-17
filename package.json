@@ -1,6 +1,6 @@
 {
   "name": "es6-mock-server",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Build and Serve Test Data",
   "main": "dist/index.js",
   "scripts": {
