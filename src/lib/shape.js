@@ -22,7 +22,9 @@ export const shape = def => i =>
     // Is the value a function? If so call and assign value
     if (isProvider(fn)) {
       acc[key] = fn(i)
+    } else {
+      // Return the original value if not a provider fn
+      acc[key] = fn
     }
-    // Just return the value if not a function
     return acc
   }, {})

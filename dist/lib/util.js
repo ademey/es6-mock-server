@@ -1,16 +1,21 @@
-export const isProvider = provider => {
-  if (typeof provider === 'function') {
-    return true
-  }
-  return false
-}
+'use strict';
 
-export const warnProvider = provider => {
-  if (!isProvider(provider)) {
-    throw new Error(`Provider must be a function. Recieved: ${provider}`)
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var isProvider = exports.isProvider = function isProvider(provider) {
+  if (typeof provider === 'function') {
+    return true;
   }
-  return true
-}
+  return false;
+};
+
+var warnProvider = exports.warnProvider = function warnProvider(provider) {
+  if (!isProvider(provider)) {
+    throw new Error('Provider must be a function. Recieved: ' + provider);
+  }
+  return true;
+};
 
 /**
  * Create a whole number between the `min` and `max` values
@@ -19,8 +24,9 @@ export const warnProvider = provider => {
  * @return {number}
  * @todo Can't recall if this would include the min & max
  */
-export const randomRange = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min
+var randomRange = exports.randomRange = function randomRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 /**
  * Create a whole number between the `min` and `max` values. Very similar to randomRange(),
@@ -34,18 +40,16 @@ export const randomRange = (min, max) =>
  * @param {number} max - Highest number
  * @return {number}
  */
-export const makeNumber = (min, max) => (!max ? min : randomRange(min, max))
+var makeNumber = exports.makeNumber = function makeNumber(min, max) {
+  return !max ? min : randomRange(min, max);
+};
 
 /**
  * Pick a random item from an array.
  * @param {array} arr - Array to pick a value from
  * @return {any} Single value from array
  */
-export const getRandom = arr => arr[Math.floor(Math.random() * arr.length)]
-
-/**
- * @todo temp? document?
- * @param {string} str - String to clean up
- * @return {string}
- */
-export const tidy = str => str.replace(/[^\w\s]/g, '').replace(/\s+/g, ' ')
+var getRandom = exports.getRandom = function getRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+};
+//# sourceMappingURL=util.js.map

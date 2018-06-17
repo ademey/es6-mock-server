@@ -1,14 +1,14 @@
-import { repeat } from '../../lib';
+import { repeat } from '../../lib'
 
 describe('repeat', () => {
-  const list = repeat(() => '🍋', 10);
+  const list = repeat(() => '🍋', 10)
 
   it('Creates an array', () => {
-    expect(list).toBeDefined();
+    expect(list).toBeDefined()
     // expect(typeof list).toEqual('array');
-  });
+  })
 
   it('Has the correct length', () => {
-    expect(list.length).toBe(10);
-  });
-});
+    expect(list.length).toBe(10)
+  })
+})

@@ -24,15 +24,14 @@ code(); // 'VQLD'
 Calling `text(4)` creates a function that will always return 4 random letters. If we just
 defined a _provider_ as a function that returns something, then we could call `text()` a
 _Provider Creator_. It is a function, that uses its params, to create a provider. This is a
-frequent pattern in this library. 
-
+frequent pattern in this library.
 
 ### Provider Types
 
 The names and locations of these functions is still very much a work in progress. I'm hoping
 for input on what types of providers we would like as a team.
 
-*Note:* the syntax like `text(3)()` that I'll be using to describe these functions... Remember
+_Note:_ the syntax like `text(3)()` that I'll be using to describe these functions... Remember
 that a _Provider Creator_ configures a function. So the first call with `text(3)` means
 "Create a function that will return 3 random letters". So calling the second time with
 no arguments is what actually generates the text.
@@ -117,9 +116,3 @@ const row = shape({
 
 repeat(row, 10) // Creates an array of 10 objects with the shape described above
 ```
-
-## Roadmap
-
-I would like to point out that while these utilities are built with supplying data from the
-mock server, there could be many other uses. Our data grids in story book examples could
-use random data. Or we could write a node script that creates JSON files.

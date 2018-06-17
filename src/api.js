@@ -1,5 +1,5 @@
-import { Router } from 'express';
-import { version } from '../package.json';
+import { Router } from 'express'
+import { version } from '../package.json'
 
 /**
  * Function to create POST api endpoints. The provided `routes` object uses its
@@ -15,14 +15,14 @@ import { version } from '../package.json';
  * app.use('/', demoApi);
  */
 const api = routes => {
-  const router = Router();
+  const router = Router()
 
-  const routeKeys = Object.keys(routes);
+  const routeKeys = Object.keys(routes)
   Object.entries(routes).forEach(([key, value]) => {
     // typecheck here
 
-    let url = key;
-    let method = 'post';
+    let url = key
+    let method = 'post'
 
     /* Temp idea to support GET requests
      * {
@@ -31,20 +31,20 @@ const api = routes => {
      * }
      */
     if (url.indexOf('GET') === 0) {
-      url = url.replace('GET', '');
-      method = 'get';
+      url = url.replace('GET', '')
+      method = 'get'
     }
 
-    const endpoint = value;
+    const endpoint = value
     router[method](url, ({ body, params }, res) => {
-      res.json(endpoint(body, params));
-    });
-  });
+      res.json(endpoint(body, params))
+    })
+  })
 
   // Print some data at api root
   router.get('/', (req, res) => {
-    res.json({ version, routes: routeKeys });
-  });
+    res.json({ version, routes: routeKeys })
+  })
 
   router.use((req, res) => {
     res.status(404).send({
@@ -53,10 +53,10 @@ const api = routes => {
       requestUrl: req.originalUrl,
       body: req.body,
       routes: routeKeys
-    });
-  });
+    })
+  })
 
-  return router;
-};
+  return router
+}
 
-export default api;
+export default api
