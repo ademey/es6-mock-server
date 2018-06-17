@@ -4,9 +4,9 @@
   "description": "Build and Serve Test Data",
   "main": "dist/index.js",
   "scripts": {
-    "watch": "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
+    "start":
+      "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
     "build": "babel src -s -D -d dist --presets env",
-    "start": "node target",
     "prettier": "prettier --write \"{lib, src, sandbox, scripts, bin}/**/*.js\""
   },
   "dependencies": {

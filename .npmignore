@@ -2,6 +2,5 @@
 .babelrc
 .eslintrc
 sandbox
-./lib
 src
 node_modules
