@@ -1,12 +1,11 @@
 {
   "name": "es6-mock-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Build and Serve Test Data",
-  "main": "target/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "watch":
-      "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
-    "build": "babel src -s -D -d target --presets env",
+    "watch": "nodemon -w sandbox -w lib --exec \"babel-node sandbox --presets env\"",
+    "build": "babel src -s -D -d dist --presets env",
     "start": "node target",
     "prettier": "prettier --write \"{lib, src, sandbox, scripts, bin}/**/*.js\""
   },
