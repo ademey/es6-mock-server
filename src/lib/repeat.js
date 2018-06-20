@@ -1,4 +1,3 @@
-import { compose, map } from 'lodash/fp'
 import { randomRange, makeNumber } from './util'
 
 /**
@@ -22,7 +21,8 @@ import { randomRange, makeNumber } from './util'
  * // Empty array of length 2
  * randomArray(2) // [undefined, undefined]
  */
-export const randomArray = compose(Array, makeNumber)
+export const randomArray = (min, max) =>
+  Array.from({ length: makeNumber(min, max) })
 
 /**
  * Function to generate an array of data. The `provider` argument is a function that when called,
@@ -51,7 +51,7 @@ export const randomArray = compose(Array, makeNumber)
  *
  */
 export const repeat = (provider, min, max) =>
-  compose(map(provider), randomArray)(min, max)
+  randomArray(min, max).map((_, index) => provider(index))
 
 /**
  * Create an array of random data, but ensure that each value in the array is unique.

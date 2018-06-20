@@ -11,4 +11,14 @@ describe('repeat', () => {
   it('Has the correct length', () => {
     expect(list.length).toBe(10)
   })
+
+  it('Calls provider with arguments', () => {
+    const provider = jest.fn()
+    expect(
+      repeat(provider, 2).toHaveBeenCalledWith(undefined, 1, [
+        undefined,
+        undefined
+      ])
+    )
+  })
 })

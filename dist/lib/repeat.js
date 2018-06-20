@@ -7,8 +7,6 @@ exports.unique = exports.repeat = exports.randomArray = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _fp = require('lodash/fp');
-
 var _util = require('./util');
 
 /**
@@ -32,7 +30,9 @@ var _util = require('./util');
  * // Empty array of length 2
  * randomArray(2) // [undefined, undefined]
  */
-var randomArray = exports.randomArray = (0, _fp.compose)(Array, _util.makeNumber);
+var randomArray = exports.randomArray = function randomArray(min, max) {
+  return Array.from({ length: (0, _util.makeNumber)(min, max) });
+};
 
 /**
  * Function to generate an array of data. The `provider` argument is a function that when called,
@@ -61,7 +61,9 @@ var randomArray = exports.randomArray = (0, _fp.compose)(Array, _util.makeNumber
  *
  */
 var repeat = exports.repeat = function repeat(provider, min, max) {
-  return (0, _fp.compose)((0, _fp.map)(provider), randomArray)(min, max);
+  return randomArray(min, max).map(function (_, index) {
+    return provider(index);
+  });
 };
 
 /**
@@ -112,7 +114,7 @@ var unique = exports.unique = function unique(provider, min, max) {
     if (attempts > count * 2) break;
 
     // Assign created value as key and value in uniqueMap
-    _fp.map[val] = val;
+    map[val] = val;
   }
   // Create an array out of uniqueMap
   return Object.values(uniqueMap);

@@ -1,6 +1,5 @@
 node_modules/
 docs/
-**/target
 .vscode/
 sandbox/scratch
 yarn-error.log
